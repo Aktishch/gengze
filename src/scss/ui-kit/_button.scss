@@ -21,8 +21,12 @@
   cursor         : pointer;
 
   @include getBtn("primary");
-  @include getBtn("second");
-  @include getBtn("gray");
+  @include getBtn("white");
+
+  &--xl {
+    --size: var(--size-xl);
+    height: var(--size);
+  }
 
   &--lg {
     --size: var(--size-lg);
@@ -34,9 +38,9 @@
     height: var(--size);
   }
 
+  &--xl,
   &--lg,
   &--md {
-    border-radius : 6px;
     padding-inline: calc(var(--size) / 2);
   }
 
@@ -60,6 +64,14 @@
     border: 2px solid var(--btn-color);
   }
 
+  &--figure {
+    transform: skew(-20deg);
+
+    & .btn__skew {
+      transform: skew(20deg);
+    }
+  }
+
   &:focus {
     box-shadow: 0 0 0 4px var(--btn-focus);
   }
@@ -67,6 +79,10 @@
   &:active {
     box-shadow: inset 0 4px 4px var(--color-black-30);
     transform : translateY(4px);
+  }
+
+  &--figure:active {
+    transform: translateY(4px) skew(-20deg);
   }
 
   &:disabled {
@@ -94,8 +110,3 @@
     }
   }
 }
-
-@import "./button-swipe";
-@import "./button-glow";
-@import "./button-bubles";
-@import "./button-border";

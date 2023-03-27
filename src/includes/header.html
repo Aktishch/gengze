@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="autor" content="Александр Актищев (Студия КИТ)"> 
+  <meta http-equiv="autor" content="Студия КИТ"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
   <title><%= data.title %></title>
 </head>
 <body>
@@ -16,145 +22,117 @@
 
   <!-- Шапка документа -->
 
-  <header class="header container flex align-center justify-between sticky zi-3 bg-black py-4 linear duration-3" data-header data-theme="light">
-    <a class="logo btn mr-10" href="/">
-      <picture>
-        <source srcset="img/pictures/logo.webp" type="image/webp">
-        <img class="w-100" src="img/pictures/logo.png" alt="">
-      </picture>
-    </a>
-    <nav class="nav d-none d-lg-flex align-center justify-between gap-4 color-second w-100">
-      <a class="link text text--uppercase text-14 bold-5 w-max" href="index.html">Front-page</a>
-      <a class="link text text--uppercase text-14 bold-5 w-max" href="primary.html">Primary-page</a>
-      <a class="link text text--uppercase text-14 bold-5 w-max" href="second.html">Second-page</a>
-      <div class="nav__accordion relative" data-accordion="hidden" data-accordion-close="scroll">
-        <div class="flex align-center text text--uppercase text-14 bold-5 w-max" data-accordion-toggle>
-          Navigation
-          <span class="nav__arrow flex align-center justify-center text-12 ml-2 linear duration-3">
-            <svg class="icon">
-              <use xlink:href="img/icons.svg#arrow-right">
-            </svg>
-          </span>
-        </div>
-        <div class="nav__content absolute radius-2 shadow-box w-100" data-accordion-content>
-          <div class="flex flex-column gap-3 color-black bg-white p-4">
-            <a class="link text-14 bold-4 w-max" data-scroll="top" href="#header">Header</a>
-            <a class="link text-14 bold-4 w-max" data-scroll="top" href="#player">Player</a>
-            <a class="link text-14 bold-4 w-max" data-scroll="top" href="#footer">Footer</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <button class="btn btn--second btn--fade d-lg-none text-44 radius-2" data-burger>
+  <header class="header container flex align-center justify-between gap-3 gap-lg-2 zi-3 bg-white py-4 linear duration-3" data-header>
+    <button class="btn btn--primary d-lg-none text-40" data-burger data-waved>
       <svg class="icon">
         <use xlink:href="img/icons.svg#burger">
       </svg>
+    </button>
+    <div class="flex align-center">
+      <a class="logo btn mr-lg-5" href="/">
+        <picture>
+          <source srcset="img/pictures/logo.webp" type="image/webp">
+          <img class="w-100" src="img/pictures/logo.jpg" alt="">
+        </picture>
+      </a>
+      <p class="d-none d-lg-block text-14 bold-4 lh-4 fade-60">Продажа СХ оборудования <br> для меллиорации</p>
+    </div>
+    <div class="d-none d-lg-flex align-center gap-lg-10">
+      <a class="btn btn--primary link-wrapper" data-waved href="mailto: info@gengze.ru">
+        <svg class="icon text-42 mr-3">
+          <use xlink:href="img/icons.svg#email">
+        </svg>
+        <div class="flex flex-column align-start color-black lh-4">
+          <span class="text-14 bold-4 fade-60">Отправить по электронной почте:</span>
+          <span class="link text-14 bold-7">info@gengze.ru</span>
+        </div>
+      </a>
+      <a class="btn btn--primary link-wrapper" data-waved href="tel: 8 861 24-24-010">
+        <svg class="icon text-42 mr-3">
+          <use xlink:href="img/icons.svg#phone">
+        </svg>
+        <div class="flex flex-column align-start color-black lh-4">
+          <span class="text-14 bold-4 fade-60">Звоните по всем вопросам:</span>
+          <span class="link text-14 bold-7">8 861 24-24-010</span>
+        </div>
+      </a>
+    </div>
+    <button class="d-lg-none btn btn--primary btn--md btn--fill btn--figure" data-waved data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">
+      <span class="btn__skew text-14 text-md-16">Написать</span>
     </button>
   </header>
 
   <!-- Мобильное меню -->
 
-  <% var social = ['ok', 'yt', 'inst', 'tw', 'fb', 'vk'] %>
-
   <section class="mobile fixed zi-6 w-100 h-100 ease duration-1" data-mobile="hidden" data-theme="light">
     <div class="mobile__content flex flex-column overflow-auto w-100 h-100 ease duration-3">
-      <div class="mobile__head flex align-center justify-between gap-2 relative bg-black p-4 ease duration-5 delay-3">
+      <div class="mobile__head flex align-center justify-between gap-2 relative bg-white border-bottom py-4 px-6 ease duration-5 delay-3">
         <a class="logo btn" href="/">
           <picture>
             <source srcset="img/pictures/logo.webp" type="image/webp">
-            <img class="w-100" src="img/pictures/logo.png" alt="">
+            <img class="w-100" src="img/pictures/logo.jpg" alt="">
           </picture>
         </a>
-        <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
-        <button class="btn text-24" data-mobile-close>
-          <svg class="icon color-white">
+        <button class="btn btn--primary text-24" data-mobile-close data-waved>
+          <svg class="icon color-black">
             <use xlink:href="img/icons.svg#close">
           </svg>
         </button>
       </div>
-      <div class="mobile__nav flex flex-column gap-4 relative color-white mb-10 p-4 ease duration-9 delay-5">
-        <a class="link text-22 w-max" href="index.html">Front-page</a>
-        <a class="link text-22 w-max" href="primary.html">Primary-page</a>
-        <a class="link text-22 w-max" href="second.html">Second-page</a>
-        <div class="mobile__accordion" data-accordion="hidden" data-accordion-close="click">
-          <div class="flex align-center text-22 w-max" data-accordion-toggle>
-            Navigation
-            <span class="mobile__arrow flex align-center justify-center text-16 fade-70 ml-2 linear duration-3">
-              <svg class="icon">
-                <use xlink:href="img/icons.svg#arrow-right">
-              </svg>
-            </span>
-          </div>
-          <div data-accordion-content>
-            <div class="flex flex-column gap-2 mt-2 pl-5">
-              <a class="link text-18 w-max" data-scroll="top" href="#header">Header</a>
-              <a class="link text-18 w-max" data-scroll="top" href="#player">Player</a>
-              <a class="link text-18 w-max" data-scroll="top" href="#footer">Footer</a>
-            </div>
-          </div>
-        </div>
+      <div class="mobile__nav flex flex-column gap-6 relative py-8 px-6 ease duration-9 delay-5">
+        <a class="link text-20 bold-4 w-max" data-scroll="top" href="#categories">Категории товаров</a>
+        <a class="link text-20 bold-4 w-max" data-scroll="top" href="#advantages">Преимущества</a>
+        <a class="link text-20 bold-4 w-max" data-scroll="top" href="#company">Где купить</a>
+        <a class="link text-20 bold-4 w-max" data-scroll="top" href="#about">О нас</a>
+        <a class="link text-20 bold-4 w-max" data-scroll="top" href="#footer">Контакты</a>
       </div>
-      <div class="mobile__footer relative mt-auto px-4 pt-4 pb-10 ease duration-5 delay-9">
-        <div class="flex align-center justify-center gap-4">
-          <% for (var i = 0; i < social.length; i++) { %>
-            <a class="btn btn--second text-32 radius-max" href="javascript: ;">
-              <svg class="icon">
-                <use xlink:href="img/icons.svg#<%= social[i] %>">
+      <div class="mobile__footer relative mt-auto px-6 pb-10 ease duration-5 delay-9">
+        <div class="flex flex-column gap-5">
+          <button class="d-lg-none btn btn--primary btn--lg btn--fill btn--figure" data-waved>
+            <span class="btn__skew flex align-center">
+              <svg class="icon text-24 mr-3">
+                <use xlink:href="img/icons.svg#user">
               </svg>
-            </a>
-          <% } %>
+              Связаться с нами
+            </span>
+          </button>
+          <a class="btn btn--primary link-wrapper w-max" data-waved href="mailto: info@gengze.ru">
+            <svg class="icon text-42 mr-3">
+              <use xlink:href="img/icons.svg#email">
+            </svg>
+            <div class="flex flex-column align-start color-black lh-4">
+              <span class="text-14 bold-4 fade-60">Отправить по электронной почте:</span>
+              <span class="link text-14 bold-7">info@gengze.ru</span>
+            </div>
+          </a>
+          <a class="btn btn--primary link-wrapper w-max" data-waved href="tel: 8 861 24-24-010">
+            <svg class="icon text-42 mr-3">
+              <use xlink:href="img/icons.svg#phone">
+            </svg>
+            <div class="flex flex-column align-start color-black lh-4">
+              <span class="text-14 bold-4 fade-60">Звоните по всем вопросам:</span>
+              <span class="link text-14 bold-7">8 861 24-24-010</span>
+            </div>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Умное меню -->
+  <!-- Навигация -->
 
-  <nav class="smart-menu container relative zi-1 bg-white <%= data.status ? '' : 'd-none' %> py-4 anim anim--down" data-anim="hidden">
-    <div class="smart-menu__block flex align-center justify-between w-100" data-menu>
-      <h2 class="font-alt text-18 bold-7" data-menu-title>Smart-menu items</h2>
-      <ul class="flex justify-between gap-3" data-menu-length>
-        <% for (var i = 1; i < 9; i++) { %>
-          <li>
-            <a class="smart-menu__item flex align-center justify-center bg-white radius-2 shadow-box py-3 px-6" href="javascript: ;">
-              <span class="text text--center text--dotted text-16 bold-6">Smart-menu item <%= i %></span>
-            </a>
-          </li>
-        <% } %>
-      </ul>
-      <div class="smart-menu__nav relative" data-menu-nav data-accordion="hidden">
-        <button class="btn btn--primary btn--lg btn--fill" data-bubbles="hidden" data-accordion-toggle>
-          more <span class="ml-1" data-menu-count>0</span>
-        </button>
-        <div class="smart-menu__content absolute w-100" data-accordion-content>
-          <ul class="flex flex-column gap-3 bg-white radius-2 shadow-box p-3" data-menu-list></ul>
-        </div>
-      </div>
+  <nav class="nav container d-none d-lg-flex align-center justify-between sticky zi-3 py-2">
+    <div class="nav__items flex align-center justify-between w-100">
+      <a class="btn btn--white link bold-4 radius-1 p-2" data-waved data-scroll="top" href="#categories">Категории товаров</a>
+      <a class="btn btn--white link bold-4 radius-1 p-2" data-waved data-scroll="top" href="#advantages">Преимущества</a>
+      <a class="btn btn--white link bold-4 radius-1 p-2" data-waved data-scroll="top" href="#company">Где купить</a>
+      <a class="btn btn--white link bold-4 radius-1 p-2" data-waved data-scroll="top" href="#about">О нас</a>
+      <a class="btn btn--white link bold-4 radius-1 p-2" data-waved data-scroll="top" href="#footer">Контакты</a>
     </div>
+    <button class="btn btn--white link radius-2 p-2" data-waved data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">
+      <svg class="icon color-primary text-24 mr-3">
+        <use xlink:href="img/icons.svg#user">
+      </svg>
+      Связаться с нами
+    </button>
   </nav>
-
-  <!-- Перетаскиваемое социальное меню -->
-
-  <nav class="social flex flex-column align-center justify-center fixed zi-2 pointer-none" data-social data-draggable>
-    <div class="social__round bg-block radius-max fade-0 pointer-all duration-4 ease-in-out" data-social-round="hidden">
-      <% for (var i = 0; i < social.length; i++) { %>
-        <a class="btn btn--second absolute text-32 radius-max" data-social-link href="javascript: ;">
-          <svg class="icon">
-            <use xlink:href="img/icons.svg#<%= social[i] %>">
-          </svg>
-        </a>
-      <% } %>
-    </div>
-    <button class="social__btn btn btn--primary btn--contur radius-max shadow-box pointer-all overflow-hidden p-1" data-social-button id="draggable"></button>
-  </nav>
-
-  <!-- Переключатель темы -->
-
-  <div class="theme d-none d-lg-flex align-center justify-center fixed zi-5 bg-white border radius-4 shadow-box p-3">
-    <span class="text-14 bold-4 mr-2">Темная тема</span>
-    <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
-  </div>
-
-  <!-- Снежинки -->
-
-  <div class="snow bg-block fixed zi-5 pointer-none" data-snow></div>

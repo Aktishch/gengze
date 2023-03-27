@@ -1,0 +1,29 @@
+<div class="dialog dialog--sm radius-3 p-5 p-md-10">
+  <h2 class="text-26 text-md-36 bold-7 lh-2 mb-5">Связаться с нами</h2>
+  <p class="text-14 text-md-16 bold-4 lh-4 fade-70 mb-10">Заполните данные и мы свяжемся с Вами в ближайшее время</p>
+  <form class="form" data-form="submit">
+    <input type="hidden" value="Главная" name="theme">
+    <label class="form-label mb-4" data-label="input">
+      <span class="text-16 bold-6 mb-3">Ваш телефон</span>
+      <div class="form-wrapper">
+        <div class="input-cover">
+          <input class="input" data-input="tel" type="tel" placeholder="+7 (" name="tel">
+        </div>
+        <span class="form-error anim anim--fade" data-error>Пожалуйста, введите ваш номер!</span>
+      </div>
+    </label>
+    <label class="form-label mb-8" data-label="input">
+      <span class="text-16 bold-6 mb-3">Ваше имя</span>
+      <div class="form-wrapper">
+        <div class="input-cover">
+          <input class="input" data-input="name" type="text" name="name">
+        </div>
+        <span class="form-error anim anim--fade" data-error>Пожалуйста, введите ваше имя!</span>
+      </div>
+    </label>
+    <button class="btn btn--primary btn--lg btn--fill btn--figure w-max mx-5 mb-6" data-waved type="submit">
+      <span class="btn__skew text-14 text-md-16">Узнать подробнее</span>
+    </button>
+    <div class="link text-12 bold-4 lh-2 fade-50 pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму Вы даете согласие на обработку Ваших персональных данных</div>
+  </form>
+</div>
