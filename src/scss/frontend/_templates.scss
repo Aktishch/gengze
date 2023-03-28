@@ -115,11 +115,13 @@
     }
   }
 
-  @media(max-width: $xl) {
+  @media(max-width: 1600px) {
     & {
       background-image: linear-gradient(to right, var(--color-primary) 73%, var(--color-black) 27%);
     }
+  }
 
+  @media(max-width: $xl) {
     &__items {
       max-width: 700px;
     }

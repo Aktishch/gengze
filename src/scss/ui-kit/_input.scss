@@ -6,7 +6,7 @@
   background-color: var(--color-white);
   font-size       : var(--text-16);
   padding         : 14px 16px;
-  border          : 1px solid var(--color-black-30);
+  border          : 1px solid var(--color-black-10);
   transition      : 0.2s ease;
   user-select     : none;
 
@@ -24,7 +24,7 @@
   }
 
   &:not(&--error):focus {
-    border-color: var(--color-black-60);
+    border-color: var(--color-black-40);
   }
 
   &::placeholder {

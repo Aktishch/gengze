@@ -49,6 +49,21 @@
     max-width: 660px;
   }
 
+  &-dialog {
+    &__pack {
+      max-width: 230px;
+    }
+  }
+
+  @media(max-width: $xl) {
+    &-dialog {
+      &__content {
+        flex-direction: column;
+        align-items   : flex-start;
+      }
+    }
+  }
+
   @media(max-width: $lg) {
     & {
       flex-direction: column;
@@ -106,6 +121,14 @@
     max-width: 660px;
   }
 
+  &-dialog {
+    &__pack {
+      &::before {
+        padding-top: 25%;
+      }
+    }
+  }
+
   @media(max-width: $lg) {
     & {
       flex-direction: column;
@@ -119,6 +142,16 @@
     &__pack {
       right : 8px;
       bottom: 8px;
+    }
+  }
+
+  @media(max-width: $md) {
+    &-dialog {
+      &__pack {
+        &::before {
+          padding-top: 40%;
+        }
+      }
     }
   }
 }
