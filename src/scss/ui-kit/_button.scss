@@ -23,11 +23,6 @@
   @include getBtn("primary");
   @include getBtn("white");
 
-  &--xl {
-    --size: var(--size-xl);
-    height: var(--size);
-  }
-
   &--lg {
     --size: var(--size-lg);
     height: var(--size);
@@ -38,7 +33,6 @@
     height: var(--size);
   }
 
-  &--xl,
   &--lg,
   &--md {
     padding-inline: calc(var(--size) / 2);
